@@ -1,4 +1,4 @@
-# Indoor
+# Indoor Voice
 
 indoor.py prompts the user for input and prints it all in lowercase, leaving punctuation and spaces unchanged.
 Run with python indoor.py, type your text, and see the lowercase result.
