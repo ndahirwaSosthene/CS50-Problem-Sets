@@ -1,24 +1,12 @@
 # Meal Time
 
-Suppose that you’re in a country where it’s customary to eat breakfast between 7:00 and 8:00, lunch between 12:00 and 13:00, and dinner between 18:00 and 19:00. Wouldn’t it be nice if you had a program that could tell you what to eat when?
+meal.py is a simple program that tells you which meal it’s time for based on the current time.
 
-In meal.py, implement a program that prompts the user for a time and outputs whether it’s breakfast time, lunch time, or dinner time. If it’s not time for a meal, don’t output anything at all. Assume that the user’s input will be formatted in 24-hour time as #:## or ##:##. And assume that each meal’s time range is inclusive. For instance, whether it’s 7:00, 7:01, 7:59, or 8:00, or anytime in between, it’s time for breakfast.
+The program prompts the user to enter a time in 24-hour format (e.g., 7:30 or 12:00).
+It outputs breakfast time if the time is between 7:00 and 8:00, lunch time if between 12:00 and 13:00, and dinner time if between 18:00 and 19:00 (all inclusive).
+If the time doesn’t fall within any meal period, nothing is printed.
 
-Structure your program per the below, wherein convert is a function (that can be called by main) that converts time, a str in 24-hour format, to the corresponding number of hours as a float. For instance, given a time like "7:30" (i.e., 7 hours and 30 minutes), convert should return 7.5 (i.e., 7.5 hours).
+The script includes a convert function that converts the time string to a float representing hours.
 
-def main():
-    ...
-
-
-def convert(time):
-    ...
-
-
-if __name__ == "__main__":
-    main()
-Hints
-Recall that a str comes with quite a few methods, per docs.python.org/3/library/stdtypes.html#string-methods, including split, which separates a str into a sequence of values, all of which can be assigned to variables at once. For instance, if time is a str like "7:30", then
-hours, minutes = time.split(":")
-will assign "7" to hours and "30" to minutes.
-
-Keep in mind that there are 60 minutes in 1 hour.
+Run with python meal.py and enter a time to find out which meal you should have!
+Created for a CS50 exercise on string manipulation and conditional logic.
