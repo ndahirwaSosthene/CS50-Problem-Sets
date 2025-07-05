@@ -8,5 +8,5 @@ If the time doesn’t fall within any meal period, nothing is printed.
 
 The script includes a convert function that converts the time string to a float representing hours.
 
-Run with python meal.py and enter a time to find out which meal you should have!
+Run with **python meal.py** and enter a time to find out which meal you should have!
 Created for a CS50 exercise on string manipulation and conditional logic.

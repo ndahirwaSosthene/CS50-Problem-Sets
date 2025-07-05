@@ -15,5 +15,5 @@ Multiplication (*)
 
 Division (/)
 
-Run with python interpreter.py and enter your arithmetic expression to see the result.
+Run with **python interpreter.py** and enter your arithmetic expression to see the result.
 Created for a CS50 exercise on string methods, user input, and basic arithmetic.

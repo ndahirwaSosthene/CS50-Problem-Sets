@@ -19,5 +19,5 @@ Supported extensions and their media types include:
 
 .zip → application/zip
 
-Run with python extensions.py and enter a file name to see its media type.
+Run with **python extensions.py** and enter a file name to see its media type.
 Created for a CS50 exercise on string methods and conditional logic.
