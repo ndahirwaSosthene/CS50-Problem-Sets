@@ -21,7 +21,7 @@ while True:
         month, day, year = date.split("/")
         print(f"Date split into: month:{month}, day:{day}, year:{year}")
         if (int(month) >=1 and int(month) <=12) or (int(day) >=1 and int(day) <= 31):
-            print(f"month{month} and day{day} are in the correct scope. Moving to printing new formatted date")
+            print(f"month {month} and day {day} are in the correct scope. Moving to printing new formatted date")
             break
     except:
         print("Seems like your date is in the word Month format, lets try that")
@@ -30,16 +30,22 @@ while True:
             print(f"Date split by space into: month: {old_month}, day: {old_day}, year: {old_year}")
             day = int(old_day.removesuffix(","))
             print(f"day changed from {old_day} to {day}")
+            year = old_year
+            print("Even the year was re-assigned")
             if old_month in months:
                 print(f"Checking if the month is in the months list{months}")
                 month = months.index(old_month) + 1
                 print(f"Since month: {old_month} is in months, we turned it into number: {month}")
+                #this is where things were going wrong. It didnt continue to the next steps because it didint break out of the loop.
+                break
             else:
                 print("Oops, Month is not in months, we are going to have to reprompt you")
                 break         
         except:
             print("Invalid input still, we will have to reprompt")
             pass
+        #So this is the importance of breaking out of the loop.
+        break
 
 print("Made to a valid date, here is your new formatted date")
 print(f"{year}-{int(month):02}-{int(day):02}")
