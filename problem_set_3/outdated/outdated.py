@@ -1,4 +1,3 @@
-# List of months
 months = [
     "January",
     "February",
@@ -11,27 +10,31 @@ months = [
     "September",
     "October",
     "November",
-    "December",
+    "December"
 ]
 
 while True:
-    date = input("Date:").strip().title()
+    date = input("Date: ")
     try:
         month, day, year = date.split("/")
-        if (int(month) >=1 and int(month) <=12) or (int(day) >=1 and int(day) <= 31):
+        month = int(month.removesuffix(" "))
+        day = int(day)
+        year = int(year.removesuffix(" "))
+        if (int(month) >= 1 and int(month) <= 12) and (int(day) >= 1 and int(day) <= 31):
+            print(year, f"{month:02}", f"{day:02}", sep="-")
             break
     except:
         try:
-            old_month, old_day, old_year = date.split(" ")
-            day = int(old_day.removesuffix(","))
-            year = old_year
-            if old_month in months:
-                month = months.index(old_month) + 1
-                break
+            if "," not in date:
+                raise SyntaxError
             else:
-                break
+                word_month, day, year = date.split(" ")
+                day = day.replace(",", "")
+                day = int(day)
+                year = int(year)
+                if word_month in months and (int(day) >= 1 and int(day) <= 31):
+                    month = (months.index(word_month)+1)
+                    print(year, f"{month:02}", f"{day:02}", sep="-")
+                    break
         except:
             pass
-        break
-
-print(f"{year}-{int(month):02}-{int(day):02}")
