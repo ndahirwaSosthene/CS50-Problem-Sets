@@ -1,19 +1,23 @@
-def main():
-    txt = input("Input: ").strip()
-    short = shorten(txt)
-    print(short)
-
 def shorten(word):
-    if word.isalpha():
-        for c in word:
-            if c in ['a','e','i','u','o','A','E','I','U','O']:
-                word = word.replace(c, "")
-            else:
-                exit
-        return word
-    else:
-        exit(1)
+    """
+    Takes a string as input and returns a new string
+    with all vowels (a, e, i, o, u) removed, case-insensitively.
+    """
+    shortened_word = ""
+    for letter in word:
+        # Check if the lowercase version of the letter is a vowel
+        if letter.lower() not in "aeiou":
+            shortened_word += letter
+    return shortened_word
+
+
+def main():
+    """
+    Prompts the user for input, calls shorten, and prints the result.
+    """
+    user_input = input("Input: ")
+    print("Output:", shorten(user_input))
+
+
 if __name__ == "__main__":
     main()
-
- 
