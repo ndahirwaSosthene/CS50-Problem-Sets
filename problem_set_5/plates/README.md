@@ -15,8 +15,7 @@ The main() function prompts the user for a plate and prints Valid or Invalid. It
 
 Run with:
 **python plates.py**
-
-# test_plates.py
+**test_plates.py**
 This file contains multiple test functions beginning with test_ that thoroughly check your is_valid function for correctness.
 
 Run tests with:
