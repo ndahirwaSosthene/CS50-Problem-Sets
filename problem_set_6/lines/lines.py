@@ -5,8 +5,10 @@ count = 0
 lines = []
 
 if len(sys.argv) > 1:
+    print(sys.argv[0])
+    print(sys.argv[1])
     name = sys.argv[1]
-    if name.isalnum():
+    if name.isalnum(): 
         if name.endswith(".py"):
 
             with open(name, "r") as file:
