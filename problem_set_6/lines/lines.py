@@ -4,26 +4,27 @@ import argparse
 count = 0
 lines = []
 
-if len(sys.argv) > 1:
-    print(sys.argv[0])
-    print(sys.argv[1])
-    name = sys.argv[1]
-    if name.isalnum(): 
-        if name.endswith(".py"):
+if len(sys.argv) < 2:
+    sys.exit("Too few command-line arguments")
+elif len(sys.argv) > 2:
+    sys.exit("Too many command-line arguments")
 
-            with open(name, "r") as file:
-                lines = file.readlines()      
-        else:
-            print("Not a python file")
-    else:
-        print("Invalid/ non existing python file")
-else:
-    print("No files inputted")
+var = sys.argv[1]
 
-for line in lines:
-    if line.startswith("# ") or line.startswith(" "):
-        count += 0
-    else:
-        count +=1
+if not var.endswith('.py'):
+    sys.exit("Not a Python file")
 
-print(f"number of lines: {count}")
+try:
+    with open(var, 'r') as file:
+        for line in file:
+            if line.lstrip().startswith('#'):
+                continue
+            elif line.strip() == "":
+                continue
+            else:
+                count += 1
+
+    print(f'there are {count} lines')
+
+except FileNotFoundError:
+    sys.exit("File does not exist")

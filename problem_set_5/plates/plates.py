@@ -8,27 +8,25 @@ def main():
 
 
 def is_valid(s):
-    length = len(s)
-    if not s.isalnum():
-        return False
-    if not s[0:2].isalpha():
-        return False
-    if not 2 <= length <= 6:
+    if not isinstance(s, str):
         return False
 
-    i = 0
+    s = s.strip()
 
-    while i < length - 1:
-        if not s[i].isalpha():
-            if s[i] == "0":
+    if not 2 <= len(s) <= 6:
+        return False
+    if not s.isalnum:
+        return False
+    
+    if not(s[0].isalpha() and s[1].isalpha()):
+        return False
+    for i, ch in enumerate(s):
+        if ch.isdigit():
+            if ch == "0":
                 return False
-            elif not s[i:].isdigit():
+            if not s[i:].isdigit():
                 return False
-            else:
-                return True
-        i += 1
-
+            return True
     return True
-
 if __name__ == "__main__":
     main()
